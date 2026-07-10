@@ -1,0 +1,146 @@
+$terminal = kitty
+$fileManager = dolphin
+$menu = wofi --show drun
+
+modeline=VGA-1, 1368x768_60.00, 85.86, 1368, 1440, 1504, 1800, 768, 769, 772, 795, -hsync, +vsync
+monitor=VGA-1, 1368x768@60, 0x0, 1
+
+exec-once = waybar
+exec-once = hyprpaper &
+exec-onde = flameshot gui
+
+env = XCURSOR_SIZE,24
+env = HYPRCURSOR_SIZE,24
+
+general {
+    gaps_in = 2
+    gaps_out = 4
+    border_size = 1
+
+    col.active_border = rgba(f38ba8ff) rgba(fab387ff)
+    col.inactive_border = rgba(45475aff)
+
+    resize_on_border = false
+
+    layout = dwindle
+}
+
+decoration {
+    rounding = 0
+    rounding_power = 2
+
+    active_opacity = 1.0
+    inactive_opacity = 0.98
+
+    shadow {
+        enabled = false
+    }
+
+    blur {
+        enabled = true
+        size = 6
+        passes = 2
+        vibrancy = 0.2696
+    }
+}
+
+animations {
+    enabled = yes, please :3
+
+    bezier = easeOutQuint,   0.23, 1,    0.32, 1
+    bezier = easeInOutCubic, 0.65, 0.05, 0.36, 1
+    bezier = linear,         0,    0,    1,    1
+    bezier = almostLinear,   0.5,  0.5,  0.75, 1
+    bezier = quick,          0.15, 0,    0.1,  1
+
+    animation = workspaces,    1,     1.0,  almostLinear, fade
+    animation = workspacesIn,  1,     1.0,  almostLinear, fade
+    animation = workspacesOut, 1,     1.0,  almostLinear, fade
+}
+
+dwindle {
+    pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+    preserve_split = true # You probably want this
+}
+
+master {
+    new_status = master
+}
+
+misc {
+    force_default_wallpaper = -1 # Set to 0 or 1 to disable the anime mascot wallpapers
+    disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
+}
+
+input {
+    kb_layout = br
+    kb_options = grp:win_space_togggle
+    kb_variant =
+    kb_model =
+    kb_rules =
+
+    follow_mouse = 2
+
+    sensitivity = 0
+
+}
+
+gesture = 3, horizontal, workspace
+
+device {
+    name = epic-mouse-v1
+    sensitivity = -0.5
+}
+
+$mainMod = SUPER
+
+bind = $mainMod, S, exec, $terminal
+bind = $mainMod, Q, killactive,
+bind = $mainMod, E, exec, $fileManager
+bind = $mainMod, D, exec, $menu
+bind = , Print, exec, flameshot gui
+bind = $mainMod, W, exec, change-wallpaper
+bind = $mainMod, Z, exec, swaync-client -t
+bind = $mainMod, B, togglefloating,
+
+bind = $mainMod, 1, workspace, 1
+bind = $mainMod, 2, workspace, 2
+bind = $mainMod, 3, workspace, 3
+bind = $mainMod, 4, workspace, 4
+bind = $mainMod, 5, workspace, 5
+bind = $mainMod, 6, workspace, 6
+bind = $mainMod, 7, workspace, 7
+bind = $mainMod, 8, workspace, 8
+bind = $mainMod, 9, workspace, 9
+bind = $mainMod, 0, workspace, 10
+
+bindm = $mainMod, mouse:272, movewindow
+bindm = $mainMod, mouse:273, resizewindow
+
+windowrule {
+    name = suppress-maximize-events
+    match:class = .*
+
+    suppress_event = maximize
+}
+
+windowrule {
+    name = fix-xwayland-drags
+    match:class = ^$
+    match:title = ^$
+    match:xwayland = true
+    match:float = true
+    match:fullscreen = false
+    match:pin = false
+
+    no_focus = true
+}
+
+windowrule {
+    name = move-hyprland-run
+
+    match:class = hyprland-run
+
+    move = 20 monitor_h-120
+    float = yes
+}

@@ -1,0 +1,25 @@
+window {
+    background-color: #1a1614;
+    color: #f4e7d3;
+}
+
+#input {
+    background-color: #1a1614;
+    color: #e0a965;
+    border: none;	
+}
+
+#entry:selected {
+    background-color: #eeb96a;
+}
+
+#entry:selected #text {
+    color: #1a1614;
+    font-weight: bold;
+}
+
+* {
+    font-family: "Monaspace Neon";
+}
+~
+~

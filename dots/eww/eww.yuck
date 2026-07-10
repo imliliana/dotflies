@@ -1,0 +1,14 @@
+(defpoll meudeus :interval "1s" :initial "SIFUDER" "date '+%H:%M'")
+
+(defwidget clock []
+  (box
+    :orientation "v"
+    :halign "start"
+    :valign "start"
+  (label :text meudeus :wrap "on")))
+
+(defwindow clock
+  :monitor 0
+  :stacking "bg"
+  :geometry (geometry :x "20px" :y "0px" :width "300px" :anchor "top left")
+  (clock))

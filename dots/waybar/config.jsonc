@@ -1,0 +1,69 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 10,
+  "height": 28,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "tray",
+    "mpris",
+    "network",
+    "custom/notification"
+  ],
+  "tray": {
+    "spacing": 10,
+    "icon-size": 16,
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": false,
+    "format": "{name}",
+    "on-click": "activate"
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:L%A %d %B}",
+    "tooltip": false
+  },
+  "mpris": {
+    "format": "{status_icon} {title}",
+    "format-paused": "{status_icon} {title}",
+    "interval": 1,
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    }
+  }, 
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+        "notification": "<span foreground='red' font='8' rise='3000'></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='red' font='8' rise='3000'></span>",
+        "dnd-none": "",
+        "inhibited-notification": "<span foreground='red' font='8' rise='3000'></span>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "<span foreground='red' font='8' rise='3000'></span>",
+        "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "network": {
+    "format": "",
+    "format-disconnected": ""
+    }
+  }
+}

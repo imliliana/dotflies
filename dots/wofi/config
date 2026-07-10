@@ -1,0 +1,7 @@
+width=490
+height=440
+location=center
+show=drun
+prompt=Search Library...
+filter_rate=100
+allow_images=false
