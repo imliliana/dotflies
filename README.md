@@ -1,2 +1,2 @@
 # ૐ lilidots 
-![/home/littlegeralt/Pictures/desktop.png](desktop.png)
+![screenshots/desktop.png](desktop.png)
