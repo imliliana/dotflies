@@ -1,0 +1,319 @@
+]f@define-cfsuolor main_accent #edb86a;
+@define-color secondary_accent #89b4fa;
+
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #edb86a;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color text #ffdba6;
+@define-color subtext1 #edb86a;
+@define-color subtext0 #a6adc8;
+@define-color overlay2 #9399b2;
+@define-color overlay1 #7f849c;
+@define-color overlay0 #6c7086;
+@define-color surface2 #585b70;
+@define-color surface1 #45475a;
+@define-color surface0 #313244;
+@define-color base #1e1e2e;
+@define-color mantle #0b0300;
+@define-color crust #11111b;
+
+* {
+  color: #edb68a;
+  all: unset;
+  font-size: 16px;
+  font-family: "SpaceMono Nerd Font";
+  font-weight: normal;
+  transition: 200ms;
+}
+
+.control-center {
+  background: #0b0300;
+  border-radius: 3px;
+  padding: 9px;
+  margin: 0px;
+  border: 1px solid #5e4012;
+}
+
+/* buttons grid */
+
+.widget-buttons-grid {
+  margin: 0px;
+  background: transparent;
+  color: #edb86a;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  margin: 3px;
+  padding: 6px 12px;
+  background: #170c09;
+  color: #edb86a;
+  border-radius: 3px;
+  border: 1px solid #5e4012;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: #2e1e1a;
+  color: #edb86a;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+  background: #edb86a;
+  border: 1px solid #5e4012;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
+  color: @crust;
+}
+
+/* notifications */
+
+.notification-row .notification-background {
+  background: #170c09;
+  padding: 0px;
+  border-radius: 2px;
+  margin: 5px 5px 5px 5px;
+  border: 1px solid #5e4012;
+}
+
+.summary {
+  font-size: 15px;
+  background: transparent;
+  color: #edb86a !important;
+  margin-left: 0px;
+}
+
+.time {
+  font-size: 11px;
+  font-style: italic;
+  background: transparent;
+  color: #edb86a;
+  text-shadow: none;
+  margin: 3px 10px 0px 0px;
+}
+
+.image {
+  background: transparent;
+  border-radius: 99px;
+  margin: 0px 10px 3px 2px;
+}
+
+.body {
+  font-size: 13px;
+  font-weight: normal;
+  background: transparent;
+  color: #edb86a !important;
+  text-shadow: none;
+  margin-left: 0px;
+}
+
+.notification-group-headers {
+  font-weight: bold;
+  font-size: 11pt;
+  color: #edb86a;
+}
+
+.notification-group-icon {
+  color: @green;
+  margin-right: 8px;
+}
+
+.notification-group-collapse-button {
+  background: @maroon;
+  color: @base;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.notification-group-collapse-button:hover {
+  background: @red;
+  color: @crust;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked:hover {
+  background: #f2c98a;
+  border: 1px solid #5e4012;
+}
+
+.notification-group-close-all-button {
+  background: @maroon;
+  color: @base;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.notification-group-close-all-button:hover {
+  background: @red;
+  color: @crust;
+}
+
+.notification-default-action,
+.notification-action {
+  padding: 4px;
+  margin: 0;
+  box-shadow: none;
+  background: transparent;
+  border: none;
+  color: #ffdba6;
+  transition: all 0.15s ease-in-out;
+  font-size: 11pt;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  -gtk-icon-effect: none;
+  background: @mantle;
+}
+
+.notification-default-action {
+  border-radius: 8px;
+}
+
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.notification-action {
+  border-radius: 0;
+  border-top: none;
+  border-right: none;
+}
+
+.notification-action:first-child {
+  border-bottom-left-radius: 10px;
+  background: @mantle;
+}
+
+.notification-action:last-child {
+  border-bottom-right-radius: 10px;
+  background: @mantle;
+}
+
+.inline-reply {
+  margin-top: 4px;
+}
+
+.inline-reply-entry {
+  background: @crust;
+  color: #ffdba6;
+  caret-color: @mauve;
+  border: 1px solid @surface0;
+  border-radius: 10px;
+}
+
+.inline-reply-button {
+  margin-left: 4px;
+  background: @crust;
+  border: 1px solid @surface0;
+  border-radius: 10px;
+  color: #ffdba6;
+}
+
+.inline-reply-button:disabled {
+  background: initial;
+  color: @overlay1;
+  border: 1px solid transparent;
+}
+
+.inline-reply-button:hover {
+  background: @surface1;
+}
+
+* Music player */
+.widget-]mpris {
+  /* background: alpha(@selected, 0.2); */
+  border-radius: 3px @subtext1;
+  color: #edb86a;
+  padding: 0px;
+  margin: 20px 6px;
+}
+
+.widget-mpris button {
+  color: @text;
+  border-radius: 4px;
+  transform: translate(34px, -10px);
+}
+
+.widget-mpris button:hover {
+  color: @text;
+}
+
+.widget-mpris-player .mpris-background {
+  filter: blur(10000px);
+  background-image: none
+}
+
+.widget-mpris-album-art {
+  border-radius: 3px;
+  margin: 0px;
+}
+
+.widget-mpris-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: @text
+}
+
+.widget-mpris-subtitle {
+  font-weight: 500;
+  font-size: 13px;
+  color: @text;
+  margin-bottom: 9px;
+}
+
+trough highlight {
+  padding: 4px;
+  background: #edb86a;
+  border-radius: 3px;
+}
+trough slider {
+  background: transparent;
+}
+trough slider:hover {
+  background: transparent;
+}
+
+.widget-mpris-player > box > box {
+  padding: 0px;
+  margin-bottom: -9px; 
+}
+
+.widget-volume {
+  background: #170c09;
+  padding: 2px 4px 2px 4px;
+  margin: 4px 4px 1px 4px;
+  border-radius: 2px;
+  color: #edb86a;
+  border: 1px solid #5e4012;
+}
+
+.widget-volume > box > button {
+  background: transparent;
+  border: none;
+}
+
+.widget-backlight {
+  background: @base;
+  color: #edb68a;
+  padding: 2px 4px 2px 4px;
+  margin: 1px 4px 4px 4px;
+  border-radius: 2px;
+  border: 1px solid #45475a;
+}
+.widget-backlight > box > button {
+  background: transparent;
+  border: none;
+}
